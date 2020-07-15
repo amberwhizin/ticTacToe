@@ -1,23 +1,82 @@
-.wrapper {
-  border: solid greenyellow;
+/* how come the board won't center?*/
+
+h1 {
+  border: solid orchid;
+  border-style: double;
+  color: darkgray;
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  padding: 1fr;
+  height: 35px;
+  width: 300px;
 }
 
 .row {
-  border: solid yellow;
   display: flex;
   flex-direction: row;
   width: 400px;
-  justify-content: space-around;
 }
 
-.cell {
-  border: solid orange;
+.cell1 {
+  border-right: solid orange;
+  border-bottom: solid orange;
   height: 100px;
   width: 100px;
-  
+  display: flex;
+  justify-content: center;
 }
-h1 {
-  border: solid orchid;
-  text-align: center;
-  color: darkgray;
+
+.cell2 {
+  border-bottom: solid orange;
+  height: 100px;
+  width: 100px;
 }
+
+.cell3 {
+  border-left: solid orange;
+  border-bottom: solid orange;
+  height: 100px;
+  width: 100px;
+}
+
+.cell4 {
+  border-right: solid orange;
+  border-bottom: solid orange;
+  height: 100px;
+  width: 100px;
+}
+
+.cell5 {
+  border-bottom: solid orange;
+  height: 100px;
+  width: 100px;
+}
+
+.cell6 {
+  border-left: solid orange;
+  border-bottom: solid orange;
+  height: 100px;
+  width: 100px;
+}
+
+.cell7 {
+  border-right: solid orange;
+  height: 100px;
+  width: 100px;
+}
+.cell8 {
+  border-top: solid orange;
+  border-style: hidden;
+  height: 100px;
+  width: 100px;
+}
+
+.cell9 {
+  border-left: solid orange;
+  height: 100px;
+  width: 100px;
+}
+
+
+
