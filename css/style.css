@@ -1,23 +1,28 @@
-/* how come the board won't center?*/
-
 h1 {
-  border: solid orchid;
-  border-style: double;
-  color: darkgray;
+  color: orchid;
+  text-align: center;
+}
+
+.container {
+  /* border: 2px solid red; */
   display: flex;
   justify-content: center;
-  align-content: space-around;
-  padding: 1fr;
-  height: 35px;
-  width: 300px;
+}
+
+.wrapper {
+  /* border: 1px solid gold; */
 }
 
 .row {
   display: flex;
   flex-direction: row;
-  width: 400px;
 }
 
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .cell1 {
   border-right: solid orange;
   border-bottom: solid orange;
@@ -77,6 +82,3 @@ h1 {
   height: 100px;
   width: 100px;
 }
-
-
-
