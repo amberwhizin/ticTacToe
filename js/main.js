@@ -2,38 +2,44 @@ const cells = document.querySelectorAll(".cell");
 
 let isX = true;
 const getMarker = () => {
-  const marker = isX ? "X" : "O";
+  const marker = isX ? "X" : "O"; // X then O appear when clicked with listener
   isX = !isX;
   return marker;
 };
 
-// when I click the screen x appears in a Random cell,
-// Unless I chose to be o, make those buttons x, o
-// There is a computer = x and a user = o
-// they have defaults
-// I go first
-// The computer goes next with - event input?
-
-//user turn
 for (let i = 0; i < cells.length; i++) {
   const currentCell = cells[i];
   const onClick = (event) => {
-    currentCell.innerHTML = getMarker();
+    currentCell.innerHTML = getMarker(); // invoked above function
+    currentCell.removeEventListener("click", onClick); // stopped multy click
   };
-  currentCell.addEventListener("click", onClick);
+
+  currentCell.addEventListener("click", onClick); // click on cells
+
+  // function once() {
+  //   currentCell.removeEventListener("click", once);
+  // }
+  // currentCell.addEventListener("click", once); === removeEventListener('click', onClick);
+
+  function random(number) {
+    return Math.floor(Math.random() * (number + 1));
+  }
+
+  function bgChange() {
+    const rndCol =
+      "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+    document.body.style.backgroundColor = rndCol;
+  }
+
+  currentCell.addEventListener("click", bgChange);
 }
-// computer turn
+
+
+// track x and os
+// black background color - can't see
+
 // do we need an array?
 // const arr = [X, X, X, O, O, O] ???
-// for loop reverse is doing to 
-// for (let j = cells.length; j >= 0; j--) {
-//   const currCompCell = cells[j];
-
-//   const computerTurn = (event) => {
-//     currCompCell.innerHTML = getMarker();
-//   };
-//   currCompCell.addEventListener("input", appear); //input?
-// }
 
 // currentCell.innerHTML = "X";
 
@@ -50,32 +56,18 @@ for (let i = 0; i < cells.length; i++) {
 //   currentCell.addEventListener("change", (event) => {
 //     //console.log(currentCell ? currentCell.innerHTML = "O" : currentCell.innerHTML = "X");
 //     // currentCell.innerHTML = "O";
-//     // const result = document.querySelector(".result");
-//     // result.textContent = `pop${event.target.class}`;
-//     //event.stopPropagation();
-//   });
-// }
 
 // cells[3].addEventListener("click", (event) => {
 //     cells[3].innerHTML = "X";
 // });
-
-// inputChange([x, o, x, o, x, o])
-
 
 //         prompt(`It's ${} turn!`);
 //     } else if (userX || userO === 3 { //indexOf()?
 //         prompt(`${} has Won!`)
 //     }
 
-//     // loop throught a array of 3 x's and 3 o's
-//     // when user clicks and takes there turn, no one else may use that cell
-//     // add text(x or o) when user clicks on any open spot on the screen
-
-// }
-
-// who starts first - random
-// if its not x's turn its o's turn
 // loop throught a array of 3 x's and 3 o's
+// add text(x or o) when user clicks on any open spot on the screen
+
+// if its not x's turn its o's turn
 // when user clicks and takes there turn, no one else may use that cell
-// add text when user clicks on any open spot on the
